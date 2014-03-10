@@ -1,7 +1,7 @@
 ==============
  Hudson Icons
 ==============
-Uses Greasemonkey (`Firefox <https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/>`_) / Tampermonkey (`Chrome <https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en>`_)
+Uses `Greasemonkey <https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/>`_ (Firefox) / `Tampermonkey <https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en>`_ (Chrome)
 
 Changes
 
