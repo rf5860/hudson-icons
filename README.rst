@@ -11,3 +11,8 @@ To this
 
 .. image:: imgs/new.png
 
+The links to:
+- Console
+- Raw Text Console
+- Build Parameters
+- Environment Variables
