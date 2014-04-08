@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name           Hudson Console Icon
 // @include        http://aubne-s-dvl01b.dev.mincom.com:8080/*
+// @include        http://aubne-s-dvl01b.ventyx.abb.com:8080/*
 // ==/UserScript==
 
 var ds = document.getElementsByClassName("build-row no-wrap");
