@@ -17,7 +17,7 @@ for (var i = 0; i < ds.length; i++) {
   var notepadLink = "<a href=\"" + relativeLink +"consoleText\">" + notepadImage + "</a>";
   var parametersLink = "<a href=\"" + relativeLink +"parameters\">" + configImage + "</a>";
   var injectedVarsLink = "<a href=\"" + relativeLink +"injectedEnvVars\">" + configImage + "</a>";
-  var rebuildLink = "<a href=\"" + relativeLink +"injectedEnvVars\">" + rebuildImage + "</a>";
+  var rebuildLink = "<a href=\"" + relativeLink +"rebuild\">" + rebuildImage + "</a>";
 
   element.children[2].innerHTML += rebuildLink + consoleLink + notepadLink + parametersLink + injectedVarsLink;
 }
