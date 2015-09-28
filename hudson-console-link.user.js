@@ -3,12 +3,18 @@
 // @include       http://awsjenkins.dev.mincom.com:8080/*
 // @include       http://awsjenkins.techops.ventyx.abb.com:8080/*
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
+// @require       https://gist.githubusercontent.com/BrockA/2625891/raw/fd02ec05e3079cdd52cf5892a7ba27b67b6b6131/waitForKeyElements.js
 // @author        rf5860
 // @version       0.3
 // @updateURL     https://github.com/rf5860/hudson-icons
 // @downloadURL   https://github.com/rf5860/hudson-icons
 // ==/UserScript==
 
+function addLinks(v) {
+    var r = $(v).find('a.tip').attr('href'); var cl = CONSOLE_LINK.replace('{0}', r); var nl = NOTEPAD_LINK.replace('{0}', r);
+    var pl = PARAMETERS_LINK.replace('{0}', r); var il = INJECTEDVARS_LINK.replace('{0}', r); var rl = REBUILD_LINK.replace('{0}', r);
+    $(v).find('td.build-row-cell').prepend('<div style="width: 80px;float: left">'+cl+nl+pl+il+rl);
+}
 var CONSOLE_IMAGE = '<img title="Console output" alt="Console output" src="/static/dc668826/images/16x16/terminal.gif" border="0" />'
 var NOTEPAD_IMAGE = '<img title="Text output" alt="Console output" src="/static/dc668826/images/16x16/notepad.gif" border="0" />'
 var CONFIG_IMAGE = '<img title="Settings" alt="Settings" src="/static/dc668826/images/16x16/setting.png" border="0" />'
@@ -24,8 +30,5 @@ $('.pane.build-details').css('width','130px');
 $('.pane.build-controls').css('width','50px');
 $('a.tip').css('padding-right', '0px');
 $('a.tip').css('padding-left', '0px');
-$('.build-row.overflow-checked').each(function(i,v) {
-    var r = $(this).find('a.tip').attr('href'); var cl = CONSOLE_LINK.replace('{0}', r); var nl = NOTEPAD_LINK.replace('{0}', r);
-    var pl = PARAMETERS_LINK.replace('{0}', r); var il = INJECTEDVARS_LINK.replace('{0}', r); var rl = REBUILD_LINK.replace('{0}', r);
-    $(this).find('td.build-row-cell').prepend('<div style="width: 80px;float: left">'+cl+nl+pl+il+rl);
-});
+$('.build-row.overflow-checked').each(addLinks);
+waitForKeyElements('.transitive', addLinks);
