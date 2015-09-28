@@ -4,7 +4,7 @@
 // @include       http://awsjenkins.techops.ventyx.abb.com:8080/*
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
 // @author        rf5860
-// @version       0.2
+// @version       0.3
 // @updateURL     https://github.com/rf5860/hudson-icons
 // @downloadURL   https://github.com/rf5860/hudson-icons
 // ==/UserScript==
@@ -18,10 +18,12 @@ var NOTEPAD_LINK = '<a href="{0}consoleText">' + NOTEPAD_IMAGE + '</a>';
 var PARAMETERS_LINK = '<a href="{0}parameters">' + CONFIG_IMAGE + '</a>';
 var INJECTEDVARS_LINK = '<a href="{0}injectedEnvVars">' + CONFIG_IMAGE + '</a>';
 var REBUILD_LINK = '<a href="{0}rebuild">' + REBUILD_IMAGE + '</a>';
-$('#side-panel').css('width','350px');
-$('.pane.build-name').css('width','20px');
-$('.pane.build-details').css('width','150px');
+$('#side-panel').css('width','375px');
+$('.pane.build-name').css('width','60px');
+$('.pane.build-details').css('width','130px');
 $('.pane.build-controls').css('width','50px');
+$('a.tip').css('padding-right', '0px');
+$('a.tip').css('padding-left', '0px');
 $('.build-row.overflow-checked').each(function(i,v) {
     var r = $(this).find('a.tip').attr('href'); var cl = CONSOLE_LINK.replace('{0}', r); var nl = NOTEPAD_LINK.replace('{0}', r);
     var pl = PARAMETERS_LINK.replace('{0}', r); var il = INJECTEDVARS_LINK.replace('{0}', r); var rl = REBUILD_LINK.replace('{0}', r);
